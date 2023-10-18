@@ -1,5 +1,5 @@
-import "./App.css";
 import ContactSection from "./components/ContactSection";
+import FotterSection from "./components/FotterSection";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import ServiceSection from "./components/ServiceSection";
@@ -8,14 +8,15 @@ import TestimonialSection from "./components/TestimonialSection";
 
 function App() {
   return (
-    <div>
+    <main className="main">
       <Navbar />
       <HeroSection />
       <ServiceSection />
       <SpecialistsSection />
       <TestimonialSection />
       <ContactSection />
-    </div>
+      <FotterSection />
+    </main>
   );
 }
 
