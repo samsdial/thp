@@ -53,16 +53,16 @@ const NavbarData = {
   },
 };
 
-const CarouselEndData = [
+const CarouselData = [
   {
     image: CarouselOne,
-    title: "Molienda de Alimentos",
+    title: "Bienvenido a nuestra clínica podológica",
     description:
-      "Transformación de partículas de alimento, servicio de molienda.",
+      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
     button1: {
-      text: "¿Qué hacemos?",
+      text: "Contáctanos",
       className: "btn btn-secondary mr-5",
-      href: "#service",
+      href: "#contact",
     },
     button2: {
       className: "btn-play btn-ico-play",
@@ -79,13 +79,13 @@ const CarouselEndData = [
   },
   {
     image: CarouselTwo,
-    title: "Molienda de Alimentos",
+    title: "Bienvenido a nuestra clínica podológica",
     description:
-      "Transformación de partículas de alimento, servicio de molienda.",
+      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
     button1: {
-      text: "¿Qué hacemos?",
+      text: "Contáctanos",
       className: "btn btn-secondary mr-5",
-      href: "#service",
+      href: "#contact",
     },
     button2: {
       className: "btn-play btn-ico-play",
@@ -102,13 +102,13 @@ const CarouselEndData = [
   },
   {
     image: CarouselThree,
-    title: "Molienda de Alimentos",
+    title: "Bienvenido a nuestra clínica podológica",
     description:
-      "Transformación de partículas de alimento, servicio de molienda.",
+      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
     button1: {
-      text: "¿Qué hacemos?",
+      text: "Contáctanos",
       className: "btn btn-secondary mr-5",
-      href: "#service",
+      href: "#contact",
     },
     button2: {
       className: "btn-play btn-ico-play",
@@ -125,13 +125,13 @@ const CarouselEndData = [
   },
   {
     image: CarouselFourt,
-    title: "Molienda de Alimentos",
+    title: "Bienvenido a nuestra clínica podológica",
     description:
-      "Transformación de partículas de alimento, servicio de molienda.",
+      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
     button1: {
-      text: "¿Qué hacemos?",
+      text: "Contáctanos",
       className: "btn btn-secondary mr-5",
-      href: "#service",
+      href: "#contact",
     },
     button2: {
       className: "btn-play btn-ico-play",
@@ -148,4 +148,4 @@ const CarouselEndData = [
   },
 ];
 
-export { CarouselEndData, NavbarData };
+export { CarouselData, NavbarData };

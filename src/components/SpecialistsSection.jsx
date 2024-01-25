@@ -31,10 +31,10 @@ function SpecialistsSection() {
             <div className="col-lg-4" key={index}>
               <div className="specialist-item">
                 <div className="specialist-image">
-                  <img
+                  {/* <img
                     src={`assets/img/${specialist.image}`}
                     alt={specialist.name}
-                  />
+                  /> */}
                 </div>
                 <h3 className="specialist-name">{specialist.name}</h3>
                 <p className="specialist-specialty">{specialist.specialty}</p>

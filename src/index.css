@@ -17569,8 +17569,9 @@ ul {
   min-height: 100%;
   top: 0;
   left: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: top center;
+  background-image: url(assets/gallery/hero-bg.png);
   overflow: hidden;
   will-change: transform, opacity, filter;
   -webkit-backface-visibility: hidden;
@@ -17581,7 +17582,7 @@ ul {
 
 @media (max-width: 768px) {
   .bg-holder {
-    background-position: center -280px !important;
+    background-position: center center !important;
   }
 }
 
