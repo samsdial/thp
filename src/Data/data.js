@@ -1,7 +1,13 @@
 import CarouselOne from "../assets/carrosel/01.png";
-import CarouselTwo from "../assets/carrosel/02.png";
-import CarouselThree from "../assets/carrosel/03.png";
-import CarouselFourt from "../assets/carrosel/04.png";
+import BgDepartments from "../assets/gallery/bg-departments.png";
+import BgEyeCare from "../assets/gallery/bg-eye-care.png"; //
+import Corrector from "../assets/gallery/corrector.png"; //imgSrc: "",
+import EyeCare from "../assets/gallery/eye-care.png"; //
+import Fisioterapia from "../assets/gallery/fisioterapia.png"; // imgSrc: "",
+import Ortesis from "../assets/gallery/ortesis.png"; // imgSrc: "",
+import Pgeneral from "../assets/gallery/pgeneral.png"; //imgSrc: "",
+import Plantillas from "../assets/gallery/plantillas.png"; //imgSrc: "",
+import Pterapeutico from "../assets/gallery/pterapeutico.png"; // assets/gallery/pterapeutico.png
 
 const NavbarData = {
   contact: {
@@ -55,97 +61,79 @@ const NavbarData = {
 
 const CarouselData = [
   {
-    image: CarouselOne,
-    title: "Bienvenido a nuestra clínica podológica",
+    image: CarouselOne, // Reemplaza con la ruta de la imagen correspondiente si es necesario
+    title:
+      "Especialistas en <strong>podología</strong> para la <strong>rehabilitación</strong> de tus Pies.",
     description:
-      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
+      "Nuestros podólogos están altamente capacitados y tienen años de experiencia en la prevención, diagnóstico y tratamiento de las patologías de los pies.",
     button1: {
-      text: "Contáctanos",
-      className: "btn btn-secondary mr-5",
+      text: "AGENDA TU CITA AHORA !",
+      className:
+        "btn btn-lg btn-primary rounded-pill rounded-pill order-1 order-lg-0 ms-lg-4",
       href: "#contact",
-    },
-    button2: {
-      className: "btn-play btn-ico-play",
-    },
-    additionalInfo: {
-      position: "absolute",
-      style: { bottom: "50px", zIndex: "999" },
-      content: {
-        title1: "Servicio de molienda",
-        separator: "/",
-        title2: "Alimentos secos y deshidratados",
-      },
-    },
-  },
-  {
-    image: CarouselTwo,
-    title: "Bienvenido a nuestra clínica podológica",
-    description:
-      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
-    button1: {
-      text: "Contáctanos",
-      className: "btn btn-secondary mr-5",
-      href: "#contact",
-    },
-    button2: {
-      className: "btn-play btn-ico-play",
-    },
-    additionalInfo: {
-      position: "absolute",
-      style: { bottom: "50px", zIndex: "999" },
-      content: {
-        title1: "Servicio de molienda",
-        separator: "/",
-        title2: "Alimentos secos y deshidratados",
-      },
-    },
-  },
-  {
-    image: CarouselThree,
-    title: "Bienvenido a nuestra clínica podológica",
-    description:
-      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
-    button1: {
-      text: "Contáctanos",
-      className: "btn btn-secondary mr-5",
-      href: "#contact",
-    },
-    button2: {
-      className: "btn-play btn-ico-play",
-    },
-    additionalInfo: {
-      position: "absolute",
-      style: { bottom: "50px", zIndex: "999" },
-      content: {
-        title1: "Servicio de molienda",
-        separator: "/",
-        title2: "Alimentos secos y deshidratados",
-      },
-    },
-  },
-  {
-    image: CarouselFourt,
-    title: "Bienvenido a nuestra clínica podológica",
-    description:
-      "Recupera la salud de tus pies con la atención de nuestros especialistas.",
-    button1: {
-      text: "Contáctanos",
-      className: "btn btn-secondary mr-5",
-      href: "#contact",
-    },
-    button2: {
-      className: "btn-play btn-ico-play",
-    },
-    additionalInfo: {
-      position: "absolute",
-      style: { bottom: "50px", zIndex: "999" },
-      content: {
-        title1: "Servicio de molienda",
-        separator: "/",
-        title2: "Alimentos secos y deshidratados",
-      },
     },
   },
 ];
 
-export { CarouselData, NavbarData };
+const ServiceData = [
+  {
+    serviceSection: {
+      style: {
+        backgroundImage: `url(${BgDepartments})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+      title: "SERVICIOS",
+    },
+    services: [
+      {
+        imgSrc: Pterapeutico,
+        title: "Pedicure terapéutico",
+      },
+      {
+        imgSrc: Plantillas,
+        title: "Plantillas personalizadas",
+      },
+      {
+        imgSrc: Pgeneral,
+        title: "Podología general",
+      },
+      {
+        imgSrc: Corrector,
+        title: "Corrector de uñas",
+      },
+      {
+        imgSrc: Fisioterapia,
+        title: "Fisioterapia",
+      },
+      {
+        imgSrc: Ortesis,
+        title: "Órtesis digitales",
+      },
+    ],
+  },
+];
+
+const EyeCareData = [
+  {
+    section: {
+      style: {
+        backgroundImage: `url(${BgEyeCare})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+    },
+    content: {
+      image: EyeCare,
+      title: "Tu bienestar empieza desde la raiz",
+      paragraph:
+        "En nuestro centro especializado en el cuidado del pie, estamos listos para brindarte soluciones efectivas para cualquier problema o patología que puedas tener.",
+      paragraphTwo:
+        "Desde uñas encarnadas y hongos en las uñas, hasta talagias, juanetes, dedos en garra y dedos en martillo, nuestro equipo de especialistas en podología está altamente capacitado para diagnosticar y tratar cualquier problema en tus pies. Además, ofrecemos servicios de pedicure terapéutico y asesoría personalizada para garantizar el mejor cuidado de tus pies. Puedes confiar en nosotros para brindarte el cuidado y la atención que necesitas para mantener tus pies sanos y felices.",
+      call: "¡Contáctanos para programar tu consulta y empezar a cuidar de tus pies hoy mismo!",
+      button: "¡AGENDE SU CITA AHORA!",
+    },
+  },
+];
+
+export { CarouselData, EyeCareData, NavbarData, ServiceData };

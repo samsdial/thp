@@ -1,6 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -10,8 +10,6 @@ import VideoModal from "./VideoModal";
 
 function Carousel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  console.log("hey", CarouselData);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -41,31 +39,40 @@ function Carousel() {
       <div className="hero-section pt-10" id="home">
         <Slider {...settings}>
           {CarouselData.map((item, index) => (
-            <div key={index + 1 + 2} className="container ">
-              <div className="row">
-                <div className="col-lg-6 order-lg-2">
-                  <div className="hero-image">
-                    <img src={hero} alt="Podología" />
-                    <button
-                      className={item.button2.className}
-                      onClick={openModal}
-                      data-aos="fade-left"
-                    >
-                      <span></span>
-                    </button>
-                  </div>
+            <div key={index} className="container">
+              <div className="row min-vh-xl-100 min-vh-xxl-25">
+                <div
+                  className="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"
+                  data-aos="flip-left"
+                >
+                  <a
+                    data-bs-toggle="modal"
+                    href="#exampleModalToggle"
+                    role="button"
+                  >
+                    <img
+                      alt="hero-header"
+                      className="pt-7 pt-md-0 w-100"
+                      src={hero}
+                    />
+                  </a>
                 </div>
-                <div className="col-lg-4 offset-1 order-lg-1">
-                  <h1 className="hero-title" data-aos="fade-up">
-                    {item.title}
-                  </h1>
-                  <p className="hero-subtitle" data-aos="fade-up">
+                <div
+                  className="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6"
+                  data-aos="fade-left"
+                >
+                  <h1
+                    className="fw-light font-base fs-6 fs-xxl-7 text-purple"
+                    dangerouslySetInnerHTML={{ __html: item.title }}
+                  ></h1>
+                  <p className="fs-1 mb-5 text-light-purple">
                     {item.description}
                   </p>
                   <a
                     href={item.button1.href}
-                    className="btn btn-primary btn-lg rounded-pill"
-                    data-aos="fade-right"
+                    className={item.button1.className}
+                    role="button"
+                    data-aos="flip-left"
                   >
                     {item.button1.text}
                   </a>
