@@ -2,7 +2,6 @@ import React from "react";
 import { ServiceData } from "../Data/data";
 
 function ServiceSection() {
-  // Suponiendo que ServiceData es importado correctamente
   const { serviceSection, services } = ServiceData[0];
 
   return (

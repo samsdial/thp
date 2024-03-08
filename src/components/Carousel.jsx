@@ -1,9 +1,5 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 import { CarouselData } from "../Data/data";
 import hero from "../assets/gallery/hero.png";
 import VideoModal from "./VideoModal";
@@ -14,12 +10,6 @@ function Carousel() {
   const openModal = () => {
     setIsModalOpen(true);
   };
-
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-    });
-  }, []);
 
   const settings = {
     arrows: false,
