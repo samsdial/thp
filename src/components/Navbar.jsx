@@ -40,26 +40,27 @@ function Navbar() {
                   className="text-white fs--1"
                   rel="noreferrer"
                 >
-                  <span className="mr-2">
+                  <span>
                     <BsPhone />
                   </span>
+                  <span className="m-2">Llamanos al Cel:</span>
                   {contact.phone.number}
                 </a>
               </li>
-              <li className="px-2">
+              <li className="px-2 d-none d-md-block">
                 <span className="text-white fs--1 mb-0">/</span>
               </li>
-              <li>
+              <li className="d-none d-md-block">
                 <a
                   href={contact.address.link}
                   target="_blank"
                   className="text-white fs--1"
                   rel="noreferrer"
                 >
-                  <span className="mr-2">
+                  <span>
                     <BsFillPinMapFill />
                   </span>
-                  Dirección:
+                  <span className="m-2">Dirección::</span>
                   {contact.address.text}
                 </a>
               </li>

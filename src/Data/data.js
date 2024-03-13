@@ -1,12 +1,18 @@
 import CarouselOne from "../assets/carrosel/01.png";
+import AboutBg from "../assets/gallery/about-bg.png"; //
+import AboutUs from "../assets/gallery/about-us.png"; // imageSrc: "",
+import Anita from "../assets/gallery/anita.png"; //imgSrc: "",
 import BgDepartments from "../assets/gallery/bg-departments.png";
 import BgEyeCare from "../assets/gallery/bg-eye-care.png"; //
 import Carlos from "../assets/gallery/carlos-ts.png"; //assets/gallery/carlos-ts.png",
 import Corrector from "../assets/gallery/corrector.png"; //imgSrc: "",
 import Covid from "../assets/gallery/covid-19.png"; //assets/gallery/covid-19.png
+import DocUs from "../assets/gallery/doctors-us.png"; // assets/gallery/health-care.png
 import Dotbg from "../assets/gallery/dot-bg.png"; // assets/gallery/pterapeutico.png
 import EyeCare from "../assets/gallery/eye-care.png"; //
 import Fisioterapia from "../assets/gallery/fisioterapia.png"; // imgSrc: "",
+import HealthCare from "../assets/gallery/health-care.png"; // assets/gallery/health-care.png
+import Jane from "../assets/gallery/jane.png"; //imgSrc: "",
 import Laboratories from "../assets/gallery/laboratories.png"; //assets/gallery/laboratories.png
 import Lau from "../assets/gallery/lau-ts.png";
 import LogoWhite from "../assets/gallery/logo-white.svg"; // assets/gallery/logo-white.svg
@@ -264,6 +270,68 @@ const GalleryData = [
     ],
   },
 ];
+const AboutData = [
+  {
+    AboutSection: {
+      title: "Nosotros",
+      style: {
+        backgroundImage: `url(${AboutUs})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+    },
+    BgSection: {
+      style: {
+        backgroundImage: `url(${AboutBg})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+    },
+    Content: {
+      heading: "Servicio especializado",
+      imageSrc: HealthCare,
+      paragraphs: [
+        "Nuestros especialistas tienen más de 20 años de experiencia y conocimientos actualizados en las últimas técnicas y tratamientos para el cuidado de los pies. Además, nos aseguramos de brindar un trato amable y cercano a nuestros pacientes, para que se sientan seguros y cómodos en todo momento. Puedes confiar en nosotros para recibir la mejor atención y cuidado para tus pies.",
+        "¡Contáctanos para programar tu consulta y empezar a cuidar de tus pies hoy mismo!",
+      ],
+    },
+  },
+];
+
+const SpecialistData = [
+  {
+    SpecialistSection: {
+      style: {
+        backgroundImage: `url(${DocUs})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+      title: "Nuestros Especialistas",
+    },
+    BgSection: {
+      style: {
+        backgroundImage: `url(${HealthCare})`,
+        backgroundPosition: "top center",
+        backgroundSize: "contain",
+      },
+      title: "Nuestros Especialistas",
+    },
+    SpeciaList: [
+      {
+        imgSrc: Anita,
+        h3: "Paola Cobo Serna",
+        p1: "Podóloga - Fisioterapeuta",
+        p2: "20 años de experiencia",
+      },
+      {
+        imgSrc: Jane,
+        h3: "Molly Rodríguez",
+        p1: "Podóloga - Fisioterapeuta",
+        p2: "20 años de experiencia",
+      },
+    ],
+  },
+];
 
 const TestimonyData = [
   {
@@ -309,11 +377,13 @@ const TestimonyData = [
 ];
 
 export {
+  AboutData,
   CarouselData,
   EyeCareData,
   FooterData,
   GalleryData,
   NavbarData,
   ServiceData,
+  SpecialistData,
   TestimonyData,
 };

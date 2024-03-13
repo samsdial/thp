@@ -11,7 +11,7 @@ import FooterSection from "./components/FooterSection";
 import GallerySection from "./components/GallerySection";
 import Navbar from "./components/Navbar";
 import ServiceSection from "./components/ServiceSection";
-import SpecialistsSection from "./components/SpecialistsSection";
+import SpecialistSection from "./components/SpecialistSection";
 import TestimonySection from "./components/TestimonySection";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       <ServiceSection />
       <EyeCare />
       <AboutSection />
-      <SpecialistsSection />
+      <SpecialistSection />
       <TestimonySection />
       <GallerySection />
       {/* <ContactSection /> */}

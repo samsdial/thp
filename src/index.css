@@ -14,6 +14,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ 
  :root {
   --bs-blue: #283779;
   --bs-indigo: #1B71A1;
@@ -40,6 +41,8 @@
   --bs-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 254, 254, 0.15), rgba(255, 254, 254, 0));
 }
+
+
 
 *,
 *::before,
@@ -477,6 +480,10 @@ progress {
 
 [hidden] {
   display: none !important;
+}
+
+main.main {
+  overflow-x: hidden;
 }
 
 .lead {
@@ -3493,13 +3500,6 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn {
-    -webkit-transition: none;
-    -o-transition: none;
-    transition: none;
-  }
-}
 
 .btn:hover {
   color: #1B71A1;
@@ -5137,8 +5137,9 @@ fieldset:disabled .btn {
 }
 
 .navbar-light .navbar-toggler {
-  color: #283779;
-  border-color: rgba(0, 0, 0, 0.1);
+  background-color: #c678ac;
+  color: white;
+  border-color: #c678ac;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -17569,20 +17570,22 @@ ul {
   min-height: 100%;
   top: 0;
   left: 0;
-  background-size: contain;
-  background-position: top center;
-  background-image: url(assets/gallery/hero-bg.png);
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   will-change: transform, opacity, filter;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: 0
+}
+.bg-holder--home {
+  background-size: auto;
 }
 
 @media (max-width: 768px) {
-  .bg-holder {
-    background-position: center center !important;
+  .bg-holder--home {
+    background-position: center -180px !important
   }
 }
 
