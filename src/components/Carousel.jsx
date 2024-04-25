@@ -36,7 +36,7 @@ function Carousel() {
   return (
     <>
       <div className="bg-holder bg-holder--home  bg-size" style={Style}></div>
-      <div className="hero-section pt-5" id="home">
+      <div className="hero-section" id="home">
         <Slider {...settings}>
           {CarouselData.map((item, index) => (
             <div key={index}>
@@ -46,11 +46,7 @@ function Carousel() {
                     className="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"
                     data-aos="flip-left"
                   >
-                    <a
-                      data-bs-toggle="modal"
-                      href="#exampleModalToggle"
-                      role="button"
-                    >
+                    <a data-bs-toggle="modal" onClick={openModal} role="button">
                       <img
                         alt="hero-header"
                         className="pt-7 pt-md-0 w-100"

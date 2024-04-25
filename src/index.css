@@ -18541,6 +18541,10 @@ ul {
 
 /*# sourceMappingURL=theme.css.map */
 
+.hero-section {
+  padding-top: 9rem;
+}
+
 .text-purple {
   color: #8a5080;
 }

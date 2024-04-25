@@ -34,7 +34,7 @@ const NavbarData = {
     },
     address: {
       barrio: "Bogotá,",
-      text: "Trans 60 #115-58 CL 116 con Av Suba CC Ilarco, Torre: A - Consultorio: 504",
+      text: "Trans 60 #115-58 CL 116 con Av Suba CC Ilarco, Torre: B - Consultorio: 516",
       link: "https://goo.gl/maps/wV154JB3mfVPjPKs9",
     },
     email: {
@@ -222,7 +222,7 @@ const FooterData = [
           items: [
             {
               icon: "facebook",
-              href: "https://www.facebook.com/profile.php?id=100084678278337",
+              href: "https://www.facebook.com/therapiespodologia/",
             },
             {
               icon: "instagram",
