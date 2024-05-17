@@ -26,6 +26,7 @@ function ServiceSection() {
               <ServiceItem
                 key={index}
                 imgSrc={service.imgSrc}
+                isImg={service.isImg}
                 title={service.title}
               />
             ))}
@@ -36,7 +37,9 @@ function ServiceSection() {
   );
 }
 
-function ServiceItem({ imgSrc, title }) {
+function ServiceItem({ imgSrc, isImg, title }) {
+  console.log("🚀 ~ ServiceItem ~ isImg:", isImg);
+
   return (
     <div
       className="col-auto col-md-4 col-lg-2 text-xl-start"
@@ -44,16 +47,24 @@ function ServiceItem({ imgSrc, title }) {
     >
       <div className="d-flex flex-column align-items-center">
         <div className="icon-box text-center">
-          <a className="text-decoration-none" href="#!">
-            <div className="card m-auto shadow card-span rounded-circle border border-white">
-              <img
-                className="card-img-top card-img-bottom rounded-circle"
-                src={imgSrc}
-                alt={title}
-              />
-            </div>
-          </a>
-          <p className="mt-3 fs-xxl-0 text-center">
+          {isImg && (
+            <a className="text-decoration-none" href="#!">
+              <div className="card m-auto shadow card-span rounded-circle border border-white">
+                <img
+                  className="card-img-top card-img-bottom rounded-circle"
+                  src={imgSrc}
+                  alt={title}
+                />
+              </div>
+            </a>
+          )}
+          <p
+            className={
+              !isImg
+                ? "mt-5 pt-5 fs-xxl-0 text-center"
+                : "mt-3 fs-xxl-0 text-center"
+            }
+          >
             <a className="text-decoration-none" href="#!">
               {title}
             </a>

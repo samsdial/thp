@@ -58,18 +58,22 @@ function Carousel() {
                     className="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6"
                     data-aos="fade-left"
                   >
-                    <h1
+                    <h2
                       className="fw-light font-base fs-6 fs-xxl-7 text-purple"
                       dangerouslySetInnerHTML={{ __html: item.title }}
-                    ></h1>
+                    ></h2>
                     <p className="fs-1 mb-5 text-light-purple">
                       {item.description}
                     </p>
+                    <h3 className="px-5 pb-4 font-base fs-3 fs-xxl-3 text-purple">
+                      <strong>¡Valoración gratuita!</strong>
+                    </h3>
                     <a
                       href={item.button1.href}
                       className={item.button1.className}
                       role="button"
                       data-aos="flip-left"
+                      target="_blank"
                     >
                       {item.button1.text}
                     </a>

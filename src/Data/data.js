@@ -59,7 +59,7 @@ const NavbarData = {
     { id: "service", text: "Servicios", href: "#service" },
     { id: "especilist", text: "Especialistas", href: "#especilist" },
     { id: "testimony", text: "Testimonios", href: "#testimony" },
-    { id: "contact", text: "Contacto", href: "#contact" },
+    // { id: "contact", text: "Contacto", href: "#contact" },
   ],
   social: [
     {
@@ -87,7 +87,7 @@ const CarouselData = [
       text: "AGENDA TU CITA AHORA !",
       className:
         "btn btn-lg btn-primary rounded-pill rounded-pill order-1 order-lg-0 ms-lg-4",
-      href: "#contact",
+      href: "https://wa.me/573506503396?text=¡Recupera%20la%20salud%20de%20tus%20pies!%20Pregunta%20ya%20cómo%20agendar%20tu%20cita%20hoy%20mismo.%20Quiero%20agendar%20mi%20cita.",
     },
   },
 ];
@@ -105,27 +105,58 @@ const ServiceData = [
     services: [
       {
         imgSrc: Pterapeutico,
+        isImg: true,
         title: "Pedicure terapéutico",
       },
       {
         imgSrc: Plantillas,
+        isImg: true,
         title: "Plantillas personalizadas",
       },
       {
         imgSrc: Pgeneral,
+        isImg: true,
         title: "Podología general",
       },
       {
         imgSrc: Corrector,
-        title: "Corrector de uñas",
+        isImg: true,
+        title: "Ortonixia",
       },
       {
         imgSrc: Fisioterapia,
+        isImg: true,
         title: "Fisioterapia",
       },
       {
         imgSrc: Ortesis,
+        isImg: true,
         title: "Órtesis digitales",
+      },
+      {
+        imgSrc: "",
+        isImg: false,
+        title: "Tratamiento para uña encarnada",
+      },
+      {
+        imgSrc: "",
+        isImg: false,
+        title: "Tratamiento para espolón calcaneo",
+      },
+      {
+        imgSrc: "",
+        isImg: false,
+        title: "⁠Tratamiento para pie plano",
+      },
+      {
+        imgSrc: "",
+        isImg: false,
+        title: "⁠Tratamiento para onicomicosis",
+      },
+      {
+        imgSrc: "",
+        isImg: false,
+        title: "Tratamiento para verruga plantar",
       },
     ],
   },
@@ -173,7 +204,7 @@ const FooterData = [
               text: "Lunes - Sábado / 7:00 – 19:00",
             },
             {
-              text: "Dirección: Trans 60 #115-58 CL 116 con Av Suba CC Ilarco, TO: A CO: 504",
+              text: "Dirección: Trans 60 #115-58 CL 116 con Av Suba CC Ilarco, Torre: B - Consultorio: 516",
               href: "https://goo.gl/maps/wV154JB3mfVPjPKs9",
             },
             {
@@ -205,10 +236,10 @@ const FooterData = [
               text: "Testimonio",
               href: "#testimony",
             },
-            {
-              text: "Contacto",
-              href: "#contact",
-            },
+            // {
+            //   text: "Contacto",
+            //   href: "#contact",
+            // },
           ],
         },
         {

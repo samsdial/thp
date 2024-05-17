@@ -107,6 +107,7 @@ function Navbar() {
             className={contactButton.className}
             onClick={handleCloseMenu}
             data-aos="zoom-in"
+            target="_blank"
           >
             {contactButton.text}
           </a>
