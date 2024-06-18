@@ -1,14 +1,36 @@
 import React, { useState } from "react";
+import "react-calendar/dist/Calendar.css";
+import DatePicker from "react-date-picker";
+import "react-date-picker/dist/DatePicker.css";
 
 function FormClients() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [dateBirthday, setDateBirthday] = useState(new Date());
   const [loading, setLoading] = useState(false);
+
+  function handleDateChange(date) {
+    setDate(date);
+  }
+  function handleDateBirthdayChange(dateBirthday) {
+    setDateBirthday(dateBirthday);
+  }
+  function formatDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${day}/${month}/${year}`;
+  }
 
   function submit(e) {
     const formElement = document.querySelector("form");
     e.preventDefault();
     const formData = new FormData(formElement);
+    const formattedDate = formatDate(date);
+    const formattedDateBirthday = formatDate(dateBirthday);
+    formData.append("Fecha", formattedDate);
+    formData.append("Happybirhday", formattedDateBirthday);
     setLoading(true);
     fetch(
       "https://script.google.com/macros/s/AKfycbysXkQ86H_i2kOeEmcrtucJ5GmXtxLlsFZ0F977ZidycJVWbygbaQnbepUWISmvr3Rstg/exec",
@@ -49,19 +71,20 @@ function FormClients() {
               <form className="form" onSubmit={(e) => submit(e)}>
                 <div className="row">
                   <div className="form-group col-sm-6">
-                    <input
-                      type="fecha"
-                      className="form-control bg-secondary border-0 py-4 px-3"
-                      placeholder="Fecha"
-                      name="Fecha"
+                    <DatePicker
+                      value={date}
+                      onChange={handleDateChange}
+                      format="dd/MM/yyyy"
+                      className="form-control border-0 py-4 px-3"
                     />
                   </div>
                   <div className="form-group col-sm-6">
                     <input
                       type="nombre"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Nombre"
                       name="Nombre"
+                      required
                     />
                   </div>
                 </div>
@@ -69,9 +92,10 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="apellido"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Apellido"
                       name="Apellido"
+                      required
                     />
                   </div>
                 </div>
@@ -79,17 +103,18 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="cedula"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Cedula"
                       name="Cedula"
+                      required
                     />
                   </div>
                   <div className="form-group col-sm-6">
-                    <input
-                      type="happybirhday"
-                      className="form-control bg-secondary border-0 py-4 px-3"
-                      placeholder="Happybirhday"
-                      name="Happybirhday"
+                    <DatePicker
+                      value={dateBirthday}
+                      onChange={handleDateBirthdayChange}
+                      format="dd/MM/yyyy"
+                      className="form-control border-0 py-4 px-3"
                     />
                   </div>
                 </div>
@@ -97,7 +122,7 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="edad"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Edad"
                       name="Edad"
                     />
@@ -105,7 +130,7 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="localidad"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Localidad"
                       name="Localidad"
                     />
@@ -115,7 +140,7 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="correo"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Correo"
                       name="Correo"
                     />
@@ -123,7 +148,7 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="celular"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Celular"
                       name="Celular"
                     />
@@ -133,28 +158,39 @@ function FormClients() {
                   <div className="form-group col-sm-6">
                     <input
                       type="patologia"
-                      className="form-control bg-secondary border-0 py-4 px-3"
+                      className="form-control   border-0 py-4 px-3"
                       placeholder="Patologia"
                       name="Patologia"
                     />
                   </div>
                   <div className="form-group col-sm-6">
-                    <input
-                      type="podologa"
-                      className="form-control bg-secondary border-0 py-4 px-3"
-                      placeholder="Podologa"
+                    <select
+                      className="form-control   border-0"
+                      style={{ height: "52px" }}
+                      id="podologa"
                       name="Podologa"
-                    />
+                    >
+                      <option>Podologa</option>
+                      <option>Molly</option>
+                      <option>Paola</option>
+                      <option>Otra</option>
+                    </select>
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-group col-sm-6">
-                    <input
-                      type="medio"
-                      className="form-control bg-secondary border-0 py-4 px-3"
-                      placeholder="Medio"
+                    <select
+                      className="form-control   border-0"
+                      style={{ height: "52px" }}
+                      id="medio"
                       name="Medio"
-                    />
+                    >
+                      <option>Medio</option>
+                      <option>Internet</option>
+                      <option>Referido/Recomendado</option>
+                      <option>Publicidad</option>
+                      <option>Otros</option>
+                    </select>
                   </div>
                 </div>
                 <div className="form-group"></div>

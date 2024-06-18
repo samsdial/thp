@@ -18579,3 +18579,6 @@ ul {
   border: 4px solid var(--bs-green);
   color: white;
 }
+.react-date-picker__wrapper {
+  border: none;
+}
