@@ -2551,11 +2551,11 @@ main.main {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.875rem 2.5rem;
+  padding: 0.875rem 0.8rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #1B71A1;
+  color: #c678ac;
   background-color: #DBDBE9;
   background-clip: padding-box;
   border: 1px solid #AFAEBC;
@@ -2568,8 +2568,8 @@ main.main {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
 
+}
 @media (prefers-reduced-motion: reduce) {
   .form-control {
     -webkit-transition: none;
@@ -2587,7 +2587,8 @@ main.main {
 }
 
 .form-control:focus {
-  color: #1B71A1;
+  color: #A5769E;
+  font-weight: bold;
   background-color: #DBDBE9;
   border-color: rgba(40, 55, 121, 0.8);
   outline: 0;
@@ -18581,4 +18582,10 @@ ul {
 }
 .react-date-picker__wrapper {
   border: none;
+}
+.react-date-picker__button .react-date-picker__button__icon {
+  stroke: #A5769E;
+}
+.react-date-picker__button:enabled:hover .react-date-picker__button__icon {
+  stroke: #8a5080;
 }

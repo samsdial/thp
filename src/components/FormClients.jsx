@@ -55,158 +55,186 @@ function FormClients() {
       });
   }
   return (
-    <div className="col-12 py-3" data-aos="fade-right">
-      <div className="row justify-content-center">
-        <div className="col-lg-8">
-          {formSubmitted ? (
-            <div className="text-center">
-              <p>{responseMessage}</p>
-            </div>
-          ) : loading ? (
-            <div className="text-center">
-              <p>Loading...</p>
-            </div>
-          ) : (
-            <div className="text-center">
-              <form className="form" onSubmit={(e) => submit(e)}>
-                <div className="row">
-                  <div className="form-group col-sm-6">
-                    <DatePicker
-                      value={date}
-                      onChange={handleDateChange}
-                      format="dd/MM/yyyy"
-                      className="form-control border-0 py-4 px-3"
-                    />
-                  </div>
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="nombre"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Nombre"
-                      name="Nombre"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="apellido"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Apellido"
-                      name="Apellido"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="cedula"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Cedula"
-                      name="Cedula"
-                      required
-                    />
-                  </div>
-                  <div className="form-group col-sm-6">
-                    <DatePicker
-                      value={dateBirthday}
-                      onChange={handleDateBirthdayChange}
-                      format="dd/MM/yyyy"
-                      className="form-control border-0 py-4 px-3"
-                    />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="edad"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Edad"
-                      name="Edad"
-                    />
-                  </div>
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="localidad"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Localidad"
-                      name="Localidad"
-                    />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="correo"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Correo"
-                      name="Correo"
-                    />
-                  </div>
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="celular"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Celular"
-                      name="Celular"
-                    />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <input
-                      type="patologia"
-                      className="form-control   border-0 py-4 px-3"
-                      placeholder="Patologia"
-                      name="Patologia"
-                    />
-                  </div>
-                  <div className="form-group col-sm-6">
-                    <select
-                      className="form-control   border-0"
-                      style={{ height: "52px" }}
-                      id="podologa"
-                      name="Podologa"
-                    >
-                      <option>Podologa</option>
-                      <option>Molly</option>
-                      <option>Paola</option>
-                      <option>Otra</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group col-sm-6">
-                    <select
-                      className="form-control   border-0"
-                      style={{ height: "52px" }}
-                      id="medio"
-                      name="Medio"
-                    >
-                      <option>Medio</option>
-                      <option>Internet</option>
-                      <option>Referido/Recomendado</option>
-                      <option>Publicidad</option>
-                      <option>Otros</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="form-group"></div>
-                <div>
-                  <button
-                    className="btn btn-primary font-weight-bold py-3 px-5"
-                    type="submit"
-                  >
-                    Guardar
-                  </button>
-                </div>
-              </form>
-            </div>
-          )}
+    <div className="col-lg-5">
+      {formSubmitted ? (
+        <div className="text-center">
+          <p>{responseMessage}</p>
         </div>
-      </div>
+      ) : loading ? (
+        <div className="text-center">
+          <p>Loading...</p>
+        </div>
+      ) : (
+        <div className="text-left">
+          <form className="form" onSubmit={(e) => submit(e)}>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Fecha</label>
+                <DatePicker
+                  value={date}
+                  onChange={handleDateChange}
+                  format="dd/MM/yyyy"
+                  className="form-control border-0"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Nombre</label>
+                <input
+                  type="nombre"
+                  className="form-control border-0"
+                  placeholder="Nombre"
+                  name="Nombre"
+                  required
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Apellido</label>
+                <input
+                  type="apellido"
+                  className="form-control border-0"
+                  placeholder="Apellido"
+                  name="Apellido"
+                  required
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Cedula</label>
+                <input
+                  type="text"
+                  className="form-control border-0"
+                  placeholder="Cedula"
+                  name="Cedula"
+                  required
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Cumpleaños</label>
+                <DatePicker
+                  value={dateBirthday}
+                  onChange={handleDateBirthdayChange}
+                  format="dd/MM/yyyy"
+                  className="form-control border-0  "
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Edad</label>
+                <input
+                  type="number"
+                  className="form-control border-0"
+                  placeholder="Edad del paciente"
+                  name="Edad"
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Localidad</label>
+                <select
+                  className="form-control border-0"
+                  id="localidad"
+                  name="Localidad"
+                >
+                  <option>Seleccione la localidad</option>
+                  <option>Usaquen</option>
+                  <option>Chapinero</option>
+                  <option>Santa Fe</option>
+                  <option>San Cristobal</option>
+                  <option>Usme</option>
+                  <option>Tunjuelito</option>
+                  <option>Bosa</option>
+                  <option>Kennedy</option>
+                  <option>Fontibón</option>
+                  <option>Engativá</option>
+                  <option>Suba</option>
+                  <option>Barrios Unidos</option>
+                  <option>Teusaquillo</option>
+                  <option>Los Mártires</option>
+                  <option>Antonio Nariño</option>
+                  <option>Puente Aranda</option>
+                  <option>Calendaria</option>
+                  <option>Rafael Uribe Uribe</option>
+                  <option>Ciudad Bolivar</option>
+                  <option>Sumapaz</option>
+                  <option>Alrededores de Bogotá</option>
+                  <option>Otra</option>
+                </select>
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Correo</label>
+                <input
+                  type="email"
+                  className="form-control border-0"
+                  placeholder="correo_cliente@example.com"
+                  name="Correo"
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Celular</label>
+                <input
+                  type="phone"
+                  className="form-control border-0"
+                  placeholder="+57 321 22 22 22"
+                  name="Celular"
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Patologia</label>
+                <input
+                  type="text"
+                  className="form-control border-0"
+                  placeholder="Escribe la patologia del paciente"
+                  name="Patologia"
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Podologa</label>
+                <select
+                  className="form-control border-0"
+                  id="podologa"
+                  name="Podologa"
+                >
+                  <option>Podologa</option>
+                  <option>Molly</option>
+                  <option>Paola</option>
+                  <option>Otra</option>
+                </select>
+              </div>
+            </div>
+            <div className="row">
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Medio referido</label>
+                <select
+                  className="form-control border-0"
+                  id="medio"
+                  name="Medio"
+                >
+                  <option>Medio</option>
+                  <option>Internet</option>
+                  <option>Referido/Recomendado</option>
+                  <option>Publicidad</option>
+                  <option>Otros</option>
+                </select>
+              </div>
+            </div>
+            <div className="w-100">
+              <button
+                className="btn btn-primary w-100 font-weight-bold py-3 px-5"
+                type="submit"
+              >
+                Guardar
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
     </div>
   );
 }
