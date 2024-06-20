@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "react-calendar/dist/Calendar.css";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
@@ -54,6 +54,16 @@ function FormClients() {
         setLoading(false); // Cuando la solicitud finaliza, detenemos la carga
       });
   }
+
+  useEffect(() => {
+    if (formSubmitted) {
+      const timer = setTimeout(() => {
+        window.location.reload(); // Recargar la página después de 5 segundos
+      }, 5000);
+      return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+    }
+  }, [formSubmitted]);
+
   return (
     <div className="col-lg-5">
       {formSubmitted ? (
@@ -69,12 +79,21 @@ function FormClients() {
           <form className="form" onSubmit={(e) => submit(e)}>
             <div className="row">
               <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">Fecha</label>
+                <label htmlFor="">Fecha de consulta</label>
                 <DatePicker
                   value={date}
                   onChange={handleDateChange}
                   format="dd/MM/yyyy"
                   className="form-control border-0"
+                />
+              </div>
+              <div className="form-group col-sm-6 mb-4">
+                <label htmlFor="">Fecha de Cumpleaños</label>
+                <DatePicker
+                  value={dateBirthday}
+                  onChange={handleDateBirthdayChange}
+                  format="dd/MM/yyyy"
+                  className="form-control border-0  "
                 />
               </div>
             </div>
@@ -101,7 +120,16 @@ function FormClients() {
               </div>
             </div>
             <div className="row">
-              <div className="form-group col-sm-6 mb-4">
+              <div className="form-group col-sm-3 mb-4">
+                <label htmlFor="">Edad</label>
+                <input
+                  type="number"
+                  className="form-control border-0"
+                  placeholder="Edad del paciente"
+                  name="Edad"
+                />
+              </div>
+              <div className="form-group col-sm mb-4">
                 <label htmlFor="">Cedula</label>
                 <input
                   type="text"
@@ -111,27 +139,7 @@ function FormClients() {
                   required
                 />
               </div>
-              <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">Cumpleaños</label>
-                <DatePicker
-                  value={dateBirthday}
-                  onChange={handleDateBirthdayChange}
-                  format="dd/MM/yyyy"
-                  className="form-control border-0  "
-                />
-              </div>
-            </div>
-            <div className="row">
-              <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">Edad</label>
-                <input
-                  type="number"
-                  className="form-control border-0"
-                  placeholder="Edad del paciente"
-                  name="Edad"
-                />
-              </div>
-              <div className="form-group col-sm-6 mb-4">
+              <div className="form-group col-sm mb-4">
                 <label htmlFor="">Localidad</label>
                 <select
                   className="form-control border-0"
@@ -185,7 +193,7 @@ function FormClients() {
               </div>
             </div>
             <div className="row">
-              <div className="form-group col-sm-6 mb-4">
+              <div className="form-group col-sm-12 mb-4">
                 <label htmlFor="">Patologia</label>
                 <input
                   type="text"
@@ -194,6 +202,8 @@ function FormClients() {
                   name="Patologia"
                 />
               </div>
+            </div>
+            <div className="row">
               <div className="form-group col-sm-6 mb-4">
                 <label htmlFor="">Podologa</label>
                 <select
@@ -207,8 +217,6 @@ function FormClients() {
                   <option>Otra</option>
                 </select>
               </div>
-            </div>
-            <div className="row">
               <div className="form-group col-sm-6 mb-4">
                 <label htmlFor="">Medio referido</label>
                 <select
