@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import { CarouselData } from "../Data/data";
 import AboutBg from "../assets/gallery/hero-bg.png";
-import hero from "../assets/gallery/hero.png";
+import VideoLoop from "./VideoLoop";
 import VideoModal from "./VideoModal";
 
 const BgSection = [
@@ -36,7 +36,8 @@ function Carousel() {
   return (
     <>
       <div className="bg-holder bg-holder--home  bg-size" style={Style}></div>
-      <div className="hero-section" id="home">
+      <div className="hero-section position-relative" id="home">
+        <VideoLoop />
         <Slider {...settings}>
           {CarouselData.map((item, index) => (
             <div key={index}>
@@ -46,13 +47,13 @@ function Carousel() {
                     className="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"
                     data-aos="flip-left"
                   >
-                    <a data-bs-toggle="modal" onClick={openModal} role="button">
+                    {/* <a data-bs-toggle="modal" onClick={openModal} role="button">
                       <img
                         alt="hero-header"
                         className="pt-7 pt-md-0 w-100"
                         src={hero}
                       />
-                    </a>
+                    </a> */}
                   </div>
                   <div
                     className="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6"
