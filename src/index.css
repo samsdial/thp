@@ -18589,3 +18589,38 @@ ul {
 .react-date-picker__button:enabled:hover .react-date-picker__button__icon {
   stroke: #8a5080;
 }
+
+.top-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  min-height: 100%;
+}
+
+.blink_me {
+  display: inline-block;
+  vertical-align: bottom;
+  animation: blinker 50s linear infinite;
+  animation-delay: 50s;
+  height: 25px;
+}
+
+.blink_me span {
+  float: left;
+  overflow: hidden;
+  animation: hideShow 2s linear infinite;
+}
+
+.blink_me span:nth-child(1) { animation-delay: -0s; }
+.blink_me span:nth-child(2) { animation-delay: -1s; }
+
+@keyframes blinker {
+  50% {
+    opacity: 5;
+  }
+}
+@keyframes hideShow {
+  0%, 16.6%, 33.33%, 100% { width: 0; }
+  16.66%, 33.3% { width: auto; }
+}
