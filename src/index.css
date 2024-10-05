@@ -17869,6 +17869,9 @@ ul {
   box-shadow: 0 0 0.5rem 0 rgba(254, 192, 47, 0.8) !important;
 }
 
+.shadow-transition_white {
+  background-color: #FFFEFE;
+}
 .shadow-transition {
   -webkit-box-shadow: 0 1.5625rem 2.8125rem rgba(47, 46, 65, 0.075);
   box-shadow: 0 1.5625rem 2.8125rem rgba(47, 46, 65, 0.075);
@@ -17878,6 +17881,8 @@ ul {
   transition: box-shadow 0.4s ease;
   transition: box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;
 }
+
+
 
 .shadow-warning {
   -webkit-box-shadow: 0 0 3rem 0 rgba(254, 192, 47, 0.3) !important;

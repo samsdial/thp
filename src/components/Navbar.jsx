@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-light fixed-top d-block backdrop shadow-transition"
+      className="navbar navbar-expand-lg navbar-light fixed-top d-block backdrop bg-white"
       data-navbar-on-scroll="data-navbar-on-scroll"
     >
       <div className="bg-secondary">
@@ -70,7 +70,7 @@ function Navbar() {
       </div>
 
       <div className="container py-3">
-        <a className="navbar-brand" href={brand.link}>
+        <a className="navbar-brand" href="/">
           <img alt="logo" src={thpLogo} width="220" />
         </a>
         <button

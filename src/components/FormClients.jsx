@@ -7,14 +7,28 @@ function FormClients() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
   const [date, setDate] = useState(new Date());
-  const [dateBirthday, setDateBirthday] = useState(new Date());
+  const [dateBirthday, setDateBirthday] = useState("");
   const [loading, setLoading] = useState(false);
+  const [age, setAge] = useState(0);
 
   function handleDateChange(date) {
     setDate(date);
   }
+  function calcularEdad(fechaNacimiento) {
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+      edad--;
+    }
+    return edad;
+  }
+
   function handleDateBirthdayChange(dateBirthday) {
     setDateBirthday(dateBirthday);
+    const edadCalculada = calcularEdad(dateBirthday);
+    setAge(edadCalculada);
   }
   function formatDate(date) {
     const year = date.getFullYear();
@@ -51,16 +65,16 @@ function FormClients() {
         setFormSubmitted(true);
       })
       .finally(() => {
-        setLoading(false); // Cuando la solicitud finaliza, detenemos la carga
+        setLoading(false);
       });
   }
 
   useEffect(() => {
     if (formSubmitted) {
       const timer = setTimeout(() => {
-        window.location.reload(); // Recargar la página después de 5 segundos
+        window.location.reload();
       }, 5000);
-      return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta
+      return () => clearTimeout(timer);
     }
   }, [formSubmitted]);
 
@@ -88,7 +102,7 @@ function FormClients() {
                 />
               </div>
               <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">Fecha de Cumpleaños</label>
+                <label htmlFor="">fecha de nacimiento</label>
                 <DatePicker
                   value={dateBirthday}
                   onChange={handleDateBirthdayChange}
@@ -99,7 +113,7 @@ function FormClients() {
             </div>
             <div className="row">
               <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">Nombre</label>
+                <label htmlFor="nombre">Nombre</label>
                 <input
                   type="nombre"
                   className="form-control border-0"
@@ -127,6 +141,7 @@ function FormClients() {
                   className="form-control border-0"
                   placeholder="Edad del paciente"
                   name="Edad"
+                  value={age}
                 />
               </div>
               <div className="form-group col-sm mb-4">
@@ -226,6 +241,7 @@ function FormClients() {
                 >
                   <option>Medio</option>
                   <option>Internet</option>
+                  <option>Redes sociales</option>
                   <option>Referido/Recomendado</option>
                   <option>Publicidad</option>
                   <option>Otros</option>
