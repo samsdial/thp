@@ -102,7 +102,7 @@ function FormClients() {
                 />
               </div>
               <div className="form-group col-sm-6 mb-4">
-                <label htmlFor="">fecha de nacimiento</label>
+                <label htmlFor="">Fecha de nacimiento</label>
                 <DatePicker
                   value={dateBirthday}
                   onChange={handleDateBirthdayChange}
