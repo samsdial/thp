@@ -32,6 +32,16 @@ function OnicoForm() {
       horario: formData.horario,
     });
 
+    // Rastrear conversión en Google Ads
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-663189947/CONVERSION_LABEL", // Reemplazar CONVERSION_LABEL cuando Google Ads lo proporcione
+        event_callback: () => {
+          console.log("Conversión registrada en Google Ads");
+        },
+      });
+    }
+
     // Crear mensaje para WhatsApp
     const mensaje = `
 🦶 *Nueva Consulta - Onicocriptosis*
