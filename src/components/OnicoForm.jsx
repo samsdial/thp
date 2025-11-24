@@ -14,7 +14,7 @@ function OnicoForm() {
     problema: "",
   });
 
-  const whatsappNumber = "573168179876";
+  const whatsappNumber = "573506503396";
 
   const handleChange = (e) => {
     setFormData({
